@@ -1,0 +1,19 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CameraMovementScript : MonoBehaviour
+{
+    [SerializeField] GameObject Camera;
+    [SerializeField] int senisitvity;
+
+    void Update()
+    {
+        float rotationX = Input.GetAxis("Mouse X");
+        float rotationY = Input.GetAxis("Mouse Y");
+        transform.Rotate(-transform.up * rotationX * senisitvity);
+        transform.Rotate(transform.right * rotationY * senisitvity);
+
+    }
+}
